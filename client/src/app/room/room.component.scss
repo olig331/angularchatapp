@@ -1,0 +1,11 @@
+.room_container {
+    width: 500px;
+    height: 500px;
+    background-color: "fff";
+    font-size: 32px;
+    color: black;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}

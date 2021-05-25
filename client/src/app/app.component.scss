@@ -1,6 +1,7 @@
 .app_container {
     display: grid;
     grid-template-columns: minmax(150px, 400px) 80%;
+    grid-auto-flow: column;
 
     app-navbar {
         grid-column: 1/2;
@@ -10,5 +11,8 @@
     app-home {
         grid-column: 2/3;
         grid-row: 1/2;
+    }
+    router-outlet {
+        grid-column: 3/4;
     }
 }

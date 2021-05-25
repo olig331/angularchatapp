@@ -5,6 +5,12 @@
     height: 90vh;
     margin-top: 100px;
     @include scrollBar(#e96443);
+    .button {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
     ul {
         list-style: none;
         display: flex;

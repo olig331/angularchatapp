@@ -6,18 +6,11 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home/home.component";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
-import { CreateRoomComponent } from "./home/create-room/create-room.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { RoomComponent } from "./room/room.component";
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        HomeComponent,
-        CreateRoomComponent,
-        NavbarComponent,
-        RoomComponent,
-    ],
+    declarations: [AppComponent, HomeComponent, NavbarComponent, RoomComponent],
     imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
     providers: [AllRoomsDataService],
     bootstrap: [AppComponent],
