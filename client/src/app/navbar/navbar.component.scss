@@ -1,0 +1,30 @@
+@import "../../Mixins/Mixins.scss";
+
+.nav_bar_container {
+    width: 100%;
+    background-color: #33013a;
+    border-top-right-radius: 35px;
+    border-bottom-right-radius: 35px;
+    height: 100vh;
+    position: relative;
+
+    .simple_room_list {
+        position: absolute;
+        bottom: 100px;
+        height: 250px;
+        width: 100%;
+        border-top: 2px solid white;
+        overflow-y: scroll;
+        padding-top: 10px;
+        @include scrollBar(#33013a);
+        ul {
+            list-style: none;
+
+            li {
+                margin: 4px 5px 4px 15px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    }
+}

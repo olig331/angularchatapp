@@ -1,0 +1,30 @@
+<!-- <div class="filters">
+    <h4>Filters</h4>
+    <div>Users</div>
+    <input type="text" name="search" class="search_rooms" />
+</div> -->
+<div class="rooms_container">
+    <ul *ngIf="rooms.length > 0">
+        <li *ngFor="let item of rooms">
+            <p class="room_name">{{ item.name }}</p>
+            <img class="thumbnail_img" src="{{ item.img }}" alt="thumbnail" />
+            <div
+                *ngIf="!canJoin(item.users, item.maxUsers)"
+                (click)="joinRoom(item.roomId)"
+                class="join_room_btn"
+            >
+                Join Room
+            </div>
+            <span
+                class="room_full_message"
+                *ngIf="canJoin(item.users, item.maxUsers)"
+            >
+                Room full
+            </span>
+            <div class="users_wrapper">
+                <fa-icon [icon]="fauser"></fa-icon>
+                {{ item.users }} - {{ item.maxUsers }}
+            </div>
+        </li>
+    </ul>
+</div>

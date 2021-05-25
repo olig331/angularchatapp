@@ -1,0 +1,16 @@
+<div class="nav_bar_container">
+    userName: {{ userName }}
+    <h4>Create new room</h4>
+
+    <div class="simple_room_list">
+        <ul *ngFor="let room of rooms">
+            <li>
+                <p class="room_name">{{ room.name }}</p>
+                <div class="user_wrapper">
+                    <fa-icon [icon]="faUser"></fa-icon>
+                    <span>{{ room.users }} - {{ room.maxUsers }}</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

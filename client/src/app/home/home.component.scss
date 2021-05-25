@@ -1,0 +1,90 @@
+@import "../../Mixins/Mixins.scss";
+
+.rooms_container {
+    overflow-y: scroll;
+    height: 90vh;
+    margin-top: 100px;
+    @include scrollBar(#e96443);
+    ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        li {
+            width: 400px;
+            height: 400px;
+            margin: 15px;
+            border-radius: 35px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: 0.2s linear;
+            background-color: rgba(255, 255, 255, 0.279);
+            &:hover {
+                cursor: pointer;
+                transition: 0.2s linear;
+                transform: translateY(-3px);
+            }
+            .thumbnail_img {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+            }
+            .room_full_message {
+                position: absolute;
+                left: 50%;
+                bottom: 20px;
+                transform: translateX(-50%);
+                text-align: center;
+                font-size: 22px;
+                color: red;
+            }
+            .room_name {
+                font-size: 24px;
+                text-align: center;
+                margin-top: 25px;
+            }
+            .users_wrapper {
+                position: absolute;
+                left: 25px;
+                top: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #fff;
+                font-weight: 150;
+                fa-icon {
+                    padding-right: 5px;
+                    color: rgb(1, 190, 1);
+                }
+            }
+            .join_room_btn {
+                position: absolute;
+                left: 50%;
+                border-radius: 1rem;
+                bottom: 20px;
+                width: calc(100% - 50px);
+                transform: translateX(-50%);
+                border: 1px solid;
+                text-align: center;
+                padding: 8px;
+                outline: none;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+.filters {
+    margin: 50px 0px;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
