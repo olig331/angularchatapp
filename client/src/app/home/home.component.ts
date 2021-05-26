@@ -1,5 +1,5 @@
-import { Component, OnInit, Injectable, Input } from "@angular/core";
-import { Router } from "@angular/router";
+import { Component } from "@angular/core";
+import { Router, ActivatedRoute } from "@angular/router";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { AllRoomsDataService } from "../Service/all-room-data.service";
 
@@ -9,29 +9,20 @@ import { AllRoomsDataService } from "../Service/all-room-data.service";
     styleUrls: ["./home.component.scss"],
     providers: [AllRoomsDataService],
 })
-@Injectable({
-    providedIn: "root",
-})
-export class HomeComponent implements OnInit {
+export class HomeComponent {
     fauser = faUser;
-    // @Input() rooms!: any[];
-    rooms: {
-        name: string;
-        users: number;
-        maxUsers: number;
-        roomId: string;
-        img: string;
-    }[] = [];
+    rooms: any[] = [];
+    userName: string | null = "";
     constructor(
         private router: Router,
-        private allRoomsDataService: AllRoomsDataService
+        private allRoomsDataService: AllRoomsDataService,
+        private route: ActivatedRoute
     ) {
         this.allRoomsDataService.rooms$.subscribe(
-            (rooms) => (this.rooms = rooms)
+            (rooms: any) => (this.rooms = rooms)
         );
+        this.userName = this.route.snapshot.paramMap.get("name");
     }
-
-    ngOnInit() {}
 
     public canJoin = (current: number, max: number): boolean => {
         return Math.abs(current - max) === 0;

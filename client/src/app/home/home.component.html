@@ -4,6 +4,7 @@
     <input type="text" name="search" class="search_rooms" />
 </div> -->
 <div class="rooms_container">
+    <h2 class="username">{{ userName }}</h2>
     <ul *ngIf="rooms.length > 0">
         <li *ngFor="let item of rooms">
             <p class="room_name">{{ item.name }}</p>

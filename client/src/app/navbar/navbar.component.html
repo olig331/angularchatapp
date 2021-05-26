@@ -1,10 +1,19 @@
 <div class="nav_bar_container">
-    userName: {{ userName }}
-    <h4>Create new room</h4>
-
+    <div class="icons_wrapper">
+        <fa-icon [icon]="faPlus" title="Create Room"></fa-icon>
+        <fa-icon
+            [icon]="faHome"
+            title="Home"
+            (click)="navigateHome()"
+        ></fa-icon>
+        <fa-icon title="Settings" [icon]="faCog"></fa-icon>
+    </div>
     <div class="simple_room_list">
         <ul *ngFor="let room of rooms">
-            <li>
+            <li
+                (click)="joinRoom(room.users, room.maxUsers, room.roomId)"
+                [attr.can-join]="canJoin(room.users, room.maxUsers)"
+            >
                 <p class="room_name">{{ room.name }}</p>
                 <div class="user_wrapper">
                     <fa-icon [icon]="faUser"></fa-icon>

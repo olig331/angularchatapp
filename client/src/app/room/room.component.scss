@@ -1,11 +1,77 @@
+@import "../../Mixins/Mixins.scss";
+
 .room_container {
-    width: 500px;
-    height: 500px;
-    background-color: "fff";
-    font-size: 32px;
-    color: black;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    display: flex;
+    width: 100%;
+    height: 100%;
+    @include centeredFlex();
+    filter: drop-shadow(0px 7px 29px rgba(7, 7, 6, 0.397));
+    .chat_room_container {
+        width: 65%;
+        height: 75%;
+        background-color: #534f66;
+        border-radius: 10px;
+        @include centeredFlex();
+        position: relative;
+        .sidebar {
+            position: absolute;
+            right: 0;
+            height: 100%;
+            background-color: #343143;
+
+            width: 20%;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            box-shadow: rgba(152, 152, 172, 0.25) -2px 0px 10px 0px;
+            border-left: 2px solid #928dab;
+        }
+        .write_message {
+            position: absolute;
+            bottom: 0;
+            min-width: 65%;
+            width: 100%;
+            max-width: calc(72%);
+            left: 0;
+            border: 2px solid #928dab;
+            border-bottom-left-radius: 10px;
+            background-color: #534f66;
+            outline: none;
+            resize: none;
+            max-height: 150px;
+            height: 15%;
+            color: white;
+            font-size: 18px;
+            letter-spacing: 0.08rem;
+            padding: 25px 40px;
+            &::placeholder {
+                font-size: 18px;
+                color: #fff;
+                letter-spacing: 0.09rem;
+                font-weight: 200;
+            }
+        }
+        .send_btn {
+            position: absolute;
+            bottom: 0;
+            max-height: 150px;
+            height: 15%;
+            right: 20%;
+            max-width: 150px;
+            width: 15%;
+            border: none;
+            outline: none;
+            background-color: #928dab;
+            color: white;
+            font-weight: 300;
+            font-size: 1.2em;
+            font-family: "Roboto";
+            letter-spacing: 0.12rem;
+            transition: 0.1s linear;
+            &:hover {
+                transition: 0.1s linear;
+                cursor: pointer;
+                background-color: #807b97;
+            }
+        }
+    }
 }

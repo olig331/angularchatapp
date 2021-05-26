@@ -1,0 +1,12 @@
+<div class="create_user_name_container">
+    <div class="user_name_wrapper">
+        <h3>Create a user name</h3>
+        <input
+            placeholder="Enter a username..."
+            type="text"
+            class="create_user_name"
+            (keyup)="handleChange($event)"
+        />
+        <button (click)="handleSubmit()" class="create">Create</button>
+    </div>
+</div>

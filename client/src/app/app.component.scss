@@ -1,6 +1,6 @@
 .app_container {
     display: grid;
-    grid-template-columns: minmax(150px, 400px) 80%;
+    grid-template-columns: minmax(150px, 250px) 1fr;
     grid-auto-flow: column;
 
     app-navbar {
@@ -12,7 +12,17 @@
         grid-column: 2/3;
         grid-row: 1/2;
     }
+
+    app-room {
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+
     router-outlet {
         grid-column: 3/4;
+    }
+
+    app-createusername {
+        grid-column: 2/3;
     }
 }
